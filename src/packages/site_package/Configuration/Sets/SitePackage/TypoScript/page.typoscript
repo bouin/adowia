@@ -272,3 +272,6 @@ plugin.tx_news.settings.detail {
         properties = teaser,title
     }
 }
+
+# Enable debug in typo3
+config.contentObjectExceptionHandler = 0

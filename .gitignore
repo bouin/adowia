@@ -2,6 +2,7 @@
 /vendor/
 /config/
 /typo3_src/
+/public/
 
 # Local environment files
 /.env
@@ -42,8 +43,10 @@
 /docker-compose.override.yml
 /docker-compose.override.yml
 
-/.DS_Store
+# MacOS files
 .DS_Store
+/.DS_Store
 **/.DS_Store
 
+# Tailwind files
 /src/Resources/Public/Tailwind/node_modules/
