@@ -1,0 +1,18 @@
+base: 'https://adowia.ddev.site/'
+dependencies:
+  - typo3/fluid-styled-content
+  - typo3/fluid-styled-content-css
+  - typo3/seo-sitemap
+languages:
+  -
+    title: German
+    enabled: true
+    languageId: 0
+    base: /
+    locale: de_CH
+    navigationTitle: DE
+    flag: ch
+    hreflang: de-CH
+    websiteTitle: ''
+rootPageId: 1
+websiteTitle: ''

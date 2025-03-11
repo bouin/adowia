@@ -33,3 +33,15 @@
 /.idea/
 /.vscode/
 /*.swp
+/.ddev/
+/ddev/
+
+# Docker files
+/docker-compose.yml
+/docker-compose.override.yml
+/docker-compose.override.yml
+
+/.DS_Store
+
+
+/src/Resources/Public/Tailwind/node_modules/
