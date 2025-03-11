@@ -684,10 +684,6 @@ video {
   left: 1.25rem;
 }
 
-.left-\[10vw\] {
-  left: 10vw;
-}
-
 .right-0 {
   right: 0px;
 }
@@ -698,10 +694,6 @@ video {
 
 .right-3 {
   right: 0.75rem;
-}
-
-.right-\[-10px\] {
-  right: -10px;
 }
 
 .start-0 {
@@ -845,10 +837,6 @@ video {
   margin-bottom: 1.5rem;
 }
 
-.mb-\[1\.2vw\] {
-  margin-bottom: 1.2vw;
-}
-
 .ml-1 {
   margin-left: 0.25rem;
 }
@@ -983,10 +971,6 @@ video {
 
 .w-4 {
   width: 1rem;
-}
-
-.w-\[60vw\] {
-  width: 60vw;
 }
 
 .w-auto {
@@ -1314,6 +1298,22 @@ video {
   padding-inline-end: 0.25rem;
 }
 
+.pl-1 {
+  padding-left: 0.25rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
+.pl-3 {
+  padding-left: 0.75rem;
+}
+
+.pl-5 {
+  padding-left: 1.25rem;
+}
+
 .pr-0 {
   padding-right: 0px;
 }
@@ -1370,22 +1370,6 @@ video {
   padding-top: 2rem;
 }
 
-.pl-1 {
-  padding-left: 0.25rem;
-}
-
-.pl-2 {
-  padding-left: 0.5rem;
-}
-
-.pl-3 {
-  padding-left: 0.75rem;
-}
-
-.pl-5 {
-  padding-left: 1.25rem;
-}
-
 .text-left {
   text-align: left;
 }
@@ -1399,8 +1383,13 @@ video {
 }
 
 .text-lg {
-  font-size: 1.25rem;
-  line-height: 1.53rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .font-bold {
@@ -1567,146 +1556,6 @@ video {
 
 /* Custom styles */
 
-.news-loading {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.9);
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  z-index: 1000;
-}
-
-@media (min-width: 769px) {
-  /* Hide loading indicator on desktop */
-
-  .news-loading {
-    display: none;
-  }
-}
-
-p {
-  margin-bottom: 1rem;
-}
-
-p strong {
-  font-weight: normal;
-}
-
-#nav-news-item {
-  position: fixed;
-  bottom: -100px;
-  /* Start ausserhalb des Bildschirms */
-  left: 0;
-  right: 0;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.6s ease-out;
-}
-
-#nav-news-item.visible {
-  bottom: 0;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-#nav-news-item.relative {
-  position: relative;
-  bottom: auto;
-  opacity: 1;
-  transform: none;
-}
-
-@supports (-webkit-touch-callout: none) {
-  /* Adjust for iOS devices */
-
-  .highervideo {
-    height: calc(100vh - env(safe-area-inset-bottom));
-  }
-}
-
-hr.ce-div {
-  padding-bottom: 30px;
-  border-top-width: 0px;
-}
-
-.make-me-italic .make-italic {
-  font-style: italic;
-}
-
-@media screen and (min-width: 640px) {
-  /* Global cursor hiding - outside media query */
-
-  html,
-    body {
-    cursor: none !important;
-    -webkit-cursor: none !important;
-  }
-
-  *,
-    *::before,
-    *::after {
-    cursor: none !important;
-    -webkit-cursor: none !important;
-  }
-
-  /* Hide default cursor immediately */
-
-  html,
-    body {
-    cursor: none !important;
-    -webkit-user-select: none !important;
-  }
-
-  /* Hide cursor on all interactive elements */
-
-  *,
-    a,
-    button,
-    input,
-    textarea,
-    select,
-    iframe,
-    video,
-    [role="button"],
-    [type="button"],
-    [type="submit"],
-    [type="reset"],
-    [contenteditable="true"],
-    .clickable,
-    .draggable,
-    .interactive {
-    -webkit-user-select: none !important;
-    cursor: none !important;
-  }
-
-  /* Custom circle cursor */
-
-  #custom-cursor {
-    width: 20px;
-    height: 20px;
-    background: black;
-    border-radius: 50%;
-    position: fixed;
-    left: -30px;
-    z-index: 9999;
-    visibility: visible;
-  }
-}
-
-.pb-0 p{
-  padding-bottom: 0px !important;
-  margin-bottom: 0px !important;
-}
-
-img {
-  pointer-events: none;
-  user-drag: none;
-  -webkit-user-drag: none;
-}
-
 .hover\:italic:hover {
   font-style: italic;
 }
@@ -1715,75 +1564,17 @@ img {
   opacity: 0.1;
 }
 
-.peer:hover ~ .peer-hover\:visible {
-  visibility: visible;
-}
-
-.peer:hover ~ .peer-hover\:opacity-0 {
-  opacity: 0;
-}
-
-@media (min-width: 640px) {
-  .sm\:col-span-10 {
-    grid-column: span 10 / span 10;
-  }
-}
-
 @media (min-width: 768px) {
-  .md\:visible {
-    visibility: visible;
-  }
-
-  .md\:right-\[-20vw\] {
-    right: -20vw;
-  }
-
-  .md\:col-span-1 {
-    grid-column: span 1 / span 1;
-  }
-
-  .md\:col-span-12 {
-    grid-column: span 12 / span 12;
-  }
-
-  .md\:col-span-4 {
-    grid-column: span 4 / span 4;
-  }
-
   .md\:col-span-5 {
     grid-column: span 5 / span 5;
-  }
-
-  .md\:col-span-6 {
-    grid-column: span 6 / span 6;
-  }
-
-  .md\:mb-5 {
-    margin-bottom: 1.25rem;
-  }
-
-  .md\:mb-6 {
-    margin-bottom: 1.5rem;
   }
 
   .md\:mt-0 {
     margin-top: 0px;
   }
 
-  .md\:mt-12 {
-    margin-top: 3rem;
-  }
-
   .md\:block {
     display: block;
-  }
-
-  .md\:hidden {
-    display: none;
-  }
-
-  .md\:w-\[30vw\] {
-    width: 30vw;
   }
 
   .md\:w-auto {
@@ -1823,10 +1614,6 @@ img {
     padding-right: 0px;
   }
 
-  .md\:pt-0 {
-    padding-top: 0px;
-  }
-
   .md\:pt-1 {
     padding-top: 0.25rem;
   }
@@ -1836,40 +1623,16 @@ img {
   }
 
   .md\:text-lg {
-    font-size: 1.25rem;
-    line-height: 1.53rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 
   .md\:leading-\[1\.25\] {
     line-height: 1.25;
   }
-
-  .peer:hover ~ .md\:peer-hover\:opacity-100 {
-    opacity: 1;
-  }
 }
 
 @media (min-width: 1024px) {
-  .lg\:col-span-1 {
-    grid-column: span 1 / span 1;
-  }
-
-  .lg\:col-span-2 {
-    grid-column: span 2 / span 2;
-  }
-
-  .lg\:col-span-3 {
-    grid-column: span 3 / span 3;
-  }
-
-  .lg\:col-span-5 {
-    grid-column: span 5 / span 5;
-  }
-
-  .lg\:col-span-6 {
-    grid-column: span 6 / span 6;
-  }
-
   .lg\:inline-block {
     display: inline-block;
   }
@@ -1887,36 +1650,6 @@ img {
   }
 }
 
-@media (min-width: 1280px) {
-  .xl\:col-span-1 {
-    grid-column: span 1 / span 1;
-  }
-
-  .xl\:col-span-2 {
-    grid-column: span 2 / span 2;
-  }
-
-  .xl\:col-span-3 {
-    grid-column: span 3 / span 3;
-  }
-
-  .xl\:col-span-5 {
-    grid-column: span 5 / span 5;
-  }
-
-  .xl\:col-span-7 {
-    grid-column: span 7 / span 7;
-  }
-
-  .xl\:pt-0 {
-    padding-top: 0px;
-  }
-}
-
 .rtl\:space-x-reverse:where([dir="rtl"], [dir="rtl"] *) > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 1;
-}
-
-.\[\&_a\:hover\]\:italic a:hover {
-  font-style: italic;
 }
