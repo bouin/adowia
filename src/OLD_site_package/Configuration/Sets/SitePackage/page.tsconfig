@@ -1,0 +1,42 @@
+@import './PageTsConfig/BackendLayouts/'
+
+RTE {
+    default {
+        preset = site_package
+    }
+}
+
+TCEFORM {
+    pages {
+
+    }
+    tt_content {
+
+    }
+}
+
+# news is an identifier, don't change it after links have been created
+TCEMAIN.linkHandler.news {
+    handler = TYPO3\CMS\Backend\LinkHandler\RecordLinkHandler
+    # A translatable label can be used with LLL:EXT:theme/locallang.xml:label
+    label = News
+    configuration {
+        table = tx_news_domain_model_news
+        # Default storage pid
+        storagePid = 4
+        pageTreeMountPoints = 1
+        # Hide the page tree by setting it to 1
+        hidePageTree = 0
+    }
+    scanAfter = page
+}
+
+tx_news.templateLayouts {
+    1 = Home
+    2 = Works
+    3 = Work
+    4 = Invisible
+}
+
+TCEMAIN.table.tt_content.disablePrependAtCopy = 1
+TCEMAIN.table.pages.disablePrependAtCopy = 1
