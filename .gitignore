@@ -1,5 +1,6 @@
 # TYPO3 core and vendor files
 /vendor/
+/config/
 /typo3_src/
 
 # Local environment files
