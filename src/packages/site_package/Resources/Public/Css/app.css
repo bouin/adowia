@@ -554,6 +554,10 @@ video {
   display: none;
 }
 
+html {
+  font-size: 20pt;
+}
+
 .container {
   width: 100%;
 }
@@ -981,6 +985,10 @@ video {
   width: 100%;
 }
 
+.w-1\/2 {
+  width: 50%;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -1071,6 +1079,10 @@ video {
   grid-template-columns: repeat(8, minmax(0, 1fr));
 }
 
+.grid-cols-10 {
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -1107,10 +1119,20 @@ video {
   gap: 1rem;
 }
 
+.gap-8 {
+  gap: 2rem;
+}
+
 .space-x-3 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.75rem * var(--tw-space-x-reverse));
   margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
 .self-end {
@@ -1158,6 +1180,11 @@ video {
 .border-green-400 {
   --tw-border-opacity: 1;
   border-color: rgb(74 222 128 / var(--tw-border-opacity, 1));
+}
+
+.bg-\[\#ECE6DA\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 230 218 / var(--tw-bg-opacity, 1));
 }
 
 .bg-black {
@@ -1256,6 +1283,11 @@ video {
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .pb-0 {
@@ -1565,8 +1597,16 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:col-span-5 {
-    grid-column: span 5 / span 5;
+  .md\:col-span-6 {
+    grid-column: span 6 / span 6;
+  }
+
+  .md\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
+  .md\:col-span-4 {
+    grid-column: span 4 / span 4;
   }
 
   .md\:mt-0 {
@@ -1618,10 +1658,6 @@ video {
     padding-top: 0.25rem;
   }
 
-  .md\:pt-20 {
-    padding-top: 5rem;
-  }
-
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -1629,24 +1665,6 @@ video {
 
   .md\:leading-\[1\.25\] {
     line-height: 1.25;
-  }
-}
-
-@media (min-width: 1024px) {
-  .lg\:inline-block {
-    display: inline-block;
-  }
-
-  .lg\:hidden {
-    display: none;
-  }
-
-  .lg\:grid-cols-12 {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-
-  .lg\:pb-0 {
-    padding-bottom: 0px;
   }
 }
 

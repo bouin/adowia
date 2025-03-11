@@ -10,6 +10,6 @@ module.exports = {
         '../Private/PageView/**/**/*.html', // Watch all HTML files in PageView
         '../Css/**/*.css'
     ],
-    plugins: [],
+    plugins: []
 }
 

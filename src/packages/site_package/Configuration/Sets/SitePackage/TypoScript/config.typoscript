@@ -2,8 +2,9 @@
 #### CONFIG ####
 ################
 config {
+    sys_language_mode = content_fallback
     absRefPrefix = auto
-    no_cache = {$config.no_cache}
+    no_cache = 1
     uniqueLinkVars = 1
     pageTitleFirst = 1
     linkVars = L
@@ -13,7 +14,7 @@ config {
     doctype = html5
     removeDefaultJS = {$config.removeDefaultJS}
     inlineStyle2TempFile = 1
-    admPanel = {$config.admPanel}
+    admPanel = 0
     debug = 0
     cache_period = 86400
     sendCacheHeaders = {$config.sendCacheHeaders}
@@ -33,4 +34,57 @@ config {
     compressCss = 0
     concatenateJs = 0
     concatenateCss = 0
+}
+
+config.contentObjectExceptionHandler = 0
+
+plugin.tx_news {
+    view {
+        templateRootPath = EXT:site_package/Resources/Private/news/Templates/
+        partialRootPath = EXT:site_package/Resources/Private/news/Partials/
+        layoutRootPath = EXT:site_package/Resources/Private/news/Layouts/
+    }
+}
+
+
+plugin.tx_seo {
+    config {
+        xmlSitemap {
+            sitemaps {
+                pages {
+                    config {
+                        additionalWhere = AND (no_index = 0 OR no_follow = 0)
+                        #rootPage = <optionally specify a different root page. (default: rootPageId from site configuration)>
+                        #excludePagesRecursive = <comma-separated list of page IDs>
+                    }
+                }
+            }
+        }
+    }
+}
+
+page {
+    meta {
+        description = Studio Thom Pfister | Design Agency for Brands, Unsere Arbeit umfasst Branding, Grafik und Editorial Design. Strategie und Positionierung. Produktdesign und Verpackungen. Websites und digitale Erlebnisse. Werbung und Kommunikation..
+        author = Daniel Hackiewicz
+        keywords = Kommunikationsagentur Bern, Werbeagentur Bern, Art Direction, Graphic Design, Web Design, Fashion, Branding, Advertising, Commercials, Film, Digital, Editorial Design, Art & Curation.
+        viewport = width=device-width, initial-scale=1
+        robots = index,follow
+        apple-mobile-web-app-capable = no
+        compatible = IE=edge
+    }
+}
+
+#EXT:news implements a custom pageTitleProvider \GeorgRinger\News\Seo\NewsTitleProvider which is called through the controller.
+#It can be configured using TypoScript:
+plugin.tx_news.settings.detail.pageTitle = 0
+
+plugin.tx_news.settings.detail {
+    pageTitle = 1
+    pageTitle {
+        # Register alternative provider
+        provider = GeorgRinger\News\Seo\NewsTitleProvider
+        # Comma separated list of properties which should be checked, 1st value is used
+        properties = teaser,title
+    }
 }

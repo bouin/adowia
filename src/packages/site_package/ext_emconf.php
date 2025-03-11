@@ -1,7 +1,7 @@
 <?php
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Site Package',
+    'title' => 'site package',
     'description' => '',
     'category' => 'templates',
     'constraints' => [

@@ -1,4 +1,4 @@
-Site Package for the project "Site Package"
+Site Package for the project "site package"
 ==============================================================
 
 Add some explanation here.
