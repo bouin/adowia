@@ -1,0 +1,35 @@
+# TYPO3 core and vendor files
+/vendor/
+/typo3_src/
+
+# Local environment files
+/.env
+/config/system/settings.php
+/config/system/additional.php
+
+# Cache and temporary files
+/var/*
+/typo3temp/*
+/public/typo3temp/*
+/public/fileadmin/_processed_/*
+/public/fileadmin/_temp_/*
+/public/fileadmin/_migrated/*
+
+# Logs
+/var/log/*
+/var/transient/*
+/var/session/*
+
+# Composer related
+/composer.lock
+/.composer/
+
+# Node.js / Frontend related
+/node_modules/
+/package-lock.json
+/yarn.lock
+
+# IDE / Editor settings
+/.idea/
+/.vscode/
+/*.swp
