@@ -43,6 +43,7 @@
 /docker-compose.override.yml
 
 /.DS_Store
-
+.DS_Store
+**/.DS_Store
 
 /src/Resources/Public/Tailwind/node_modules/
