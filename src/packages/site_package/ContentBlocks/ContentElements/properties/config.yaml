@@ -1,0 +1,46 @@
+name: danidani/properties
+typeName: danidani_properties
+group: default
+prefixFields: true
+prefixType: full
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links
+  - TYPO3/Categories
+fields:
+  - identifier: header
+    useExistingField: true
+    label: 'Header (It is NOT rendered in Frontend)'
+  - identifier: titel
+    type: Text
+    label: 'Titel, for example:"Immobilie in Kürze verfügbar"'
+    required: false
+  - identifier: immos
+    type: Collection
+    labelField: text
+    label: 'Immobilien'
+    fields:
+      - identifier: text
+        type: Text
+        label: 'For orientation purposes only'
+        required: false
+      - identifier: image
+        type: File
+        allowed: jpg, png, webp
+        label: 'Image'
+        maxItems: 3
+        minItems: 1
+        required: true
+      - identifier: name
+        type: Textarea
+        enableRichtext: true
+        label: 'Immobilienname'
+        required: true
+      - identifier: url
+        type: Link
+        label: 'Link to Property'
+        required: false
+        allowedTypes:
+          - page
+          - url
+          - file

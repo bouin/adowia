@@ -1,0 +1,39 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:spaceless>
+    <div class="colorspace-container colorspace-container-{data.select} p-5" id="{f:if(condition: data.verkaufen, then: 'verkaufen')}{f:if(condition: data.bewerten, then: 'bewerten')}">
+        <div class="grid grid-cols-12">
+            <div class="col-span-12 md:col-span-3">
+                <nav class="top-0 left-0 text-black">
+                    <ul class="font-medium">
+                        <li>
+                            <a href="#kaufen" class="link-underline">Immobilie kaufen</a>
+                        </li>
+                        <li>
+                            <a href="#verkaufen" class="link-underline {f:if(condition: data.verkaufen, then:'checkifactive')}">Immobilie verkaufen</a>
+                        </li>
+                        <li>
+                            <a href="#bewerten" class="link-underline {f:if(condition: data.bewerten, then:'checkifactive')}">Immobilie bewerten</a>
+                        </li>
+                        <li>
+                            <a href="#uber-mich" class="link-underline">Über mich</a>
+                        </li>
+                        <li>
+                            <a href="#kontakt" class="link-underline">Kontakt</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-span-12 md:col-span-9 pt-5 pb-[14vw]">
+                <div class="grid grid-cols-12">
+                    <div class="col-span-12 md:col-span-7">
+                        <f:format.html>{data.longText}</f:format.html>
+                    </div>
+                    <div class="col-span-12 md:col-span-5 pl-5">
+                        <a class="link-underline mail-arrow" href="mailto:waser@adowia.ch?subject={f:if(condition: data.verkaufen, then: 'Ich möchte meine Immobilie verkaufen')}{f:if(condition: data.bewerten, then: 'Ich möchte gerne einen Termin für eine Bewertung vereinbaren')}">{data.mailus}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</f:spaceless>
+</html>

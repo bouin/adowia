@@ -1,0 +1,51 @@
+<html xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Preview"/>
+
+<f:section name="Header">
+    <be:link.editRecord uid="{data.uid}" table="{data.mainType}"><h1>{data.header}</h1></be:link.editRecord>
+</f:section>
+
+<f:section name="Content">
+    <!-- Start of the content rendering -->
+    <div class="grid md:grid-cols-2 gap-0 relative">
+        <!-- Left Image -->
+        <div class="relative w-full">
+            <f:if condition="{data.image1.0}">
+                <f:image image="{data.image1.0}" class="w-full object-cover pb-10" style="padding-bottom: 10px;" width="100%" height="100%"/>
+                
+                <!-- Menu overlay if checkbox is checked -->
+                <f:if condition="{data.checkboxes}">
+                    <p>Menu</p>
+                </f:if>
+                <f:if condition="{data.textus}">
+                    <div class="absolute left-0 bottom-0 p-5 pr-20 text-black">
+                        <div class="text-black">
+                            <p>Dominique Waser</p>
+                            <p><span class="mail-arrow">Inhaber, Geschäftsführer</span></p>
+                            <br>
+                        </div>
+                        <f:transform.html>{data.textus}</f:transform.html>
+                    </div>
+                </f:if>
+            </f:if>
+        </div>
+
+        <!-- Right Image -->
+        <div class="relative w-full">
+            <f:if condition="{data.image2.0}">
+            
+                <f:image image="{data.image2.0}" class="w-full object-cover" width="100%" height="100%"/>
+                <!-- Text overlay if available -->
+                <f:if condition="{data.text}">
+                    <div class="absolute top-4 right-4 text-white">
+                        <f:transform.html>{data.text}</f:transform.html>
+                    </div>
+                </f:if>
+            </f:if>
+        </div>
+    </div>
+</f:section>
+
+</html>

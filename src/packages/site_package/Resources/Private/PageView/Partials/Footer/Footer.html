@@ -1,51 +1,82 @@
 <footer class="bg-[#ECE6DA] text-black">
-    <div class="container mx-auto px-2 py-2">
+    <div class="container-fluid mx-auto px-5 py-5 pb-5">
         <div class="grid grid-cols-12">
             <div class="col-span-12 md:col-span-6">
                 <!-- Column 1 -->      
-                <p>text 1</p>
+                <nav>
+                    <ul class="font-medium">
+                        <li>
+                            <a href="#kaufen" class="link-underline">Immobilie kaufen</a>
+                        </li>
+                        <li>
+                            <a href="#verkaufen" class="link-underline">Immobilie verkaufen</a>
+                        </li>
+                        <li>
+                            <a href="#bewerten" class="link-underline">Immobilie bewerten</a>
+                        </li>
+                        <li>
+                            <a href="#uber-mich" class="link-underline">Über mich</a>
+                        </li>
+                        <li>
+                            <a href="#kontakt" class="link-underline checkifactive">Kontakt</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
             <div class="col-span-12 md:col-span-6">
                 <!-- Column 2 -->
-                <div class="grid grid-cols-6">
-                    <div class="col-span-12 md:col-span-2">
+                <div class="grid grid-cols-12">
+                    <div class="col-span-12 xl:col-span-6 2xl:col-span-5">
                         <p>
                             ADOWIA Immobilien AG <br>
-                            Neufeldstrasse 56<br>
-                            3604 Thun<br>
+                            <a target="_blank" class="link-underline" href="https://maps.app.goo.gl/1xj1htwgQGJrc5Yw6">
+                                Neufeldstrasse 56<br>
+                                3604 Thun<br>
+                            </a>
                         </p>
                     </div>
-                    <div class="col-span-12 md:col-span-4">
+                    <div class="col-span-12 xl:col-span-6 2xl:col-span-7 self-start">
                         <p>
-                            <a href="tel:+41797737519">+41 79 773 75 19</a> <br>
-                            <a href="mailto:waser@adowia.ch">waser@adowia.ch</a>
+                            <a class="link-underline" href="tel:+41797737519">+41 79 773 75 19</a> <br>
+                            <a class="link-underline mail-arrow" href="mailto:waser@adowia.ch">waser@adowia.ch</a>
                         </p>
                     </div>
                 </div>
-                <div class="grid grid-cols-6">
-                    <div class="col-span-12 md:col-span-2">
+                <div class="grid grid-cols-12 pt-7">
+                    <div class="col-span-12 xl:col-span-6 2xl:col-span-5">
                         <p>
-                            <a href="https://www.facebook.com/adowiaimmobilienag/">LinkedIn</a>
+                            <a class="link-underline" href="https://www.facebook.com/adowiaimmobilienag/">LinkedIn</a> <br>
+                            <a class="link-underline" href="https://www.facebook.com/adowiaimmobilienag/">Instagram</a>
                         </p>
                     </div>
-                    <div class="col-span-12 md:col-span-4">
+                    <div class="col-span-12 xl:col-span-6 2xl:col-span-7">
                         <p>
-                            <a href="https://www.linkedin.com/company/adowia-immobilien-ag/">Impressum</a>
+                            <a class="link-underline" href="https://www.linkedin.com/company/adowia-immobilien-ag/">Impressum</a> <br>
+                            <a class="link-underline" href="https://www.linkedin.com/company/adowia-immobilien-ag/">Datenschutz</a>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="grid grid-cols-10">
-            <div class="col-span-12 md:col-span-4">
-                <!-- Column 1 -->      
-                <p>text nr 1</p>
+        <div class="grid grid-cols-10 pt-20">
+            <div class="col-span-12 md:col-span-3">
+                <div class="flex justify-end items-end">
+                    <!-- Column 1 -->      
+                    <p>Der erste Schritt. <br>
+                        Gute Entscheidungen beginnen mit einem Gespräch. Schreiben Sie mir. Rufen Sie an. Ich freue mich auf Sie.</p>
+                </div>
             </div>
-            <div class="col-span-12 md:col-span-2 text-center mx-auto">
-                <f:link.page pageUid="1" class="text-black">
-                    <f:image src="EXT:site_package/Resources/Public/Images/Logo.svg" alt="ADOWIA Immobilien AG Logo" />
-                </f:link.page>
+            <div class="col-span-12 md:col-span-4 text-center mx-auto flex flex-col justify-end">
+                <div class="">
+                    <f:link.page pageUid="1" class="text-black">
+                        <f:image src="EXT:site_package/Resources/Public/Images/Logo.svg" alt="ADOWIA Immobilien AG Logo" width="180px" height="auto" />
+                    </f:link.page>
+                </div>
+                
             </div>
         </div>
     </div>
 </footer>
+<div class="hidden">
+    <span class="link-fixed"></span>
+</div>
