@@ -1,21 +1,18 @@
 @import './TypoScript/'
 
-
 plugin.tx_news {
     view {
         templateRootPaths {
-            10 = EXT:site_package/Resources/Private/news/Templates/
+            10 = EXT:site_package/Resources/Private/News/Templates/
         }
         partialRootPaths {
-            10 = EXT:site_package/Resources/Private/news/Partials/
+            10 = EXT:site_package/Resources/Private/News/Partials/
         }
         layoutRootPaths {
-            10 = EXT:site_package/Resources/Private/news/Layouts/
+            10 = EXT:site_package/Resources/Private/News/Layouts/
         }
     }
 }
-
-
 
 plugin.tx_news {
     settings {
@@ -26,18 +23,3 @@ plugin.tx_news {
     }
 }
 
-plugin.tx_news {
-    settings {
-        listPid = 4
-    }
-}
-plugin.tx_news.settings {
-    list {
-        media {
-            image {
-                showInHomepage = 3      # matching value: 3 from TCA
-                showInWorks = 4         # mathicng value: 4 from TCA
-            }
-        }
-    }
-}

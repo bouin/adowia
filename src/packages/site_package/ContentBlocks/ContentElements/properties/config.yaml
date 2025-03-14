@@ -15,6 +15,17 @@ fields:
     type: Text
     label: 'Titel, for example:"Immobilie in Kürze verfügbar"'
     required: false
+  - identifier: immoimage
+    type: File
+    extendedPalette: true
+    allowed: jpg, png, webp 
+    required: false
+    label: 'Main image for the properties'
+  - identifier: maintext
+    type: Textarea
+    enableRichtext: true
+    label: 'Main text for the properties'
+    required: false
   - identifier: immos
     type: Collection
     labelField: text
@@ -36,11 +47,43 @@ fields:
         enableRichtext: true
         label: 'Immobilienname'
         required: true
-      - identifier: url
+      - identifier: urlos
         type: Link
         label: 'Link to Property'
         required: false
         allowedTypes:
           - page
           - url
-          - file
+          - news
+          - tx_news_domain_model_news
+          - tx_news
+  - identifier: commingsoonimmos
+    type: Collection
+    labelField: text
+    label: 'Coming soon Immobilien'
+    fields:
+      - identifier: text
+        type: Text
+        label: 'Small title for the coming soon immobilien'
+        required: false
+      - identifier: image
+        type: File
+        allowed: jpg, png, webp
+        label: 'Image'
+        maxItems: 3
+        minItems: 1
+        required: true
+      - identifier: name
+        type: Textarea
+        enableRichtext: true
+        label: 'Immobilienname'
+        required: true
+      - identifier: urlus
+        type: Link
+        label: 'Link to Property'
+        required: false
+        allowedTypes:
+          - page
+          - url
+          - news
+          - tx_news

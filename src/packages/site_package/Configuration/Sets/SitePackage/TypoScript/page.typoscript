@@ -10,7 +10,7 @@ page {
     bodyTagCObject {
         10 = TEXT
         #10.value = <body id="pageId-{field:uid}" class="parent-{field:pid} page-{field:uid} flex flex-col min-h-screen">
-        10.value = <body id="pageId-{field:uid}" class="parent-{field:pid} page-{field:uid}">
+        10.value = <body id="pageId-{field:uid}" class="parent-{field:pid} page-{field:uid} thisisworking">
         10.insertData = 1
     }
 
@@ -36,10 +36,6 @@ page {
         <link rel="icon" type="image/png" sizes="32x32" href="/fileadmin/Favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="96x96" href="/fileadmin/Favicon/favicon-96x96.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/fileadmin/Favicon/favicon-16x16.png">
-        <link rel="manifest" href="/fileadmin/Favicon/manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="/fileadmin/Favicon/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
     )
     
 
@@ -182,10 +178,11 @@ page {
     }
 
     includeCSSLibs {
-
+        
     }
 
     includeCSS {
+        swiper = EXT:site_package/Resources/Public/Css/libs/swiper-bundle.min.css    
         site_package_layout = EXT:site_package/Resources/Public/Css/app.css
     }
 
@@ -204,57 +201,20 @@ page {
     includeJSFooter {
         flowbite = https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js
         flowbite.external = 1
+        swiper = EXT:site_package/Resources/Public/JavaScript/libs/swiper-bundle.min.js
         site_package_scripts = EXT:site_package/Resources/Public/JavaScript/app.js  
+        
     }
 }
 
-
-#it is showing the image in list view and detail view
-plugin.tx_news.settings.list.image {
-    showInList = 1
-}
-
-plugin.tx_news.settings.detail.image {
-    showInDetail = 0
-}
-
-config.recordLinks.news {
+config.recordLinks.tx_news {
     typolink {
         # Detail page
-        parameter = 5
+        parameter = 4
         additionalParams.data = field:uid
         additionalParams.wrap = &tx_news_pi1[controller]=News&tx_news_pi1[action]=detail&tx_news_pi1[news]=|
     }
 }
-
-# Create a TypoScript RECORD object to fetch the image with ID 518
-lib.myImage = RECORDS
-lib.myImage {
-    source = 518  # The image ID you want to fetch
-    sourceInsertData = 1
-    tables = sys_file  # The table containing the image
-}
-
-lib.myImage1 = CONTENT
-lib.myImage1 {
-    table = tt_content
-    select {
-        orderBy = sorting
-        pidInList = 22
-        where = uid = 518
-    }
-}
-
-lib.myImage2 = CONTENT
-lib.myImage2 {
-    table = tt_content
-    select {
-        orderBy = sorting
-        pidInList = 22
-        where = uid = 519
-    }
-}
-
 
 plugin.tx_seo.config {
     xmlSitemap {
@@ -288,19 +248,38 @@ plugin.tx_seo.config {
     }
 }
 
-#EXT:news implements a custom pageTitleProvider \GeorgRinger\News\Seo\NewsTitleProvider which is called through the controller.
-#It can be configured using TypoScript:
-plugin.tx_news.settings.detail.pageTitle = 0
-
-plugin.tx_news.settings.detail {
-    pageTitle = 1
-    pageTitle {
-        # Register alternative provider
-        provider = GeorgRinger\News\Seo\NewsTitleProvider
-        # Comma separated list of properties which should be checked, 1st value is used
-        properties = teaser,title
+lib.textforfooter1 = RECORDS
+lib.textforfooter1 {
+    source = 11
+    sourceInsertData = 1
+    tables = tt_content
+    select {
+        orderBy = sorting
+        pidInList = 2
     }
 }
 
-# Enable debug in typo3
-config.contentObjectExceptionHandler = 0
+# Create a TypoScript RECORD object to fetch the image with ID 518
+lib.myImage = RECORDS
+lib.myImage {
+    source = 518  # The image ID you want to fetch
+    sourceInsertData = 1
+    tables = sys_file  # The table containing the image
+}
+
+tx_news.templateLayouts {
+   1 = A custom layout
+}
+
+plugin.tx_news {
+    settings {
+        detail {
+            showPrevNext = 1
+            
+            # Optional: Configure what information should be displayed
+            prevNextHeaderTags = 1
+            # Optional: Limit to same categories
+            showPrevNextWithinCategories = 1
+        }
+    }
+} 

@@ -14,16 +14,14 @@ mod {
                             1 {
                                 columns {
                                     1 {
-                                        name = LLL:EXT:site_package/Resources/Private/Language/locallang_be.xlf:backend_layout.column.normal
+                                        name = Main Content
                                         colPos = 0
-                                        identifier = main
                                     }
                                 }
                             }
                         }
                     }
                 }
-                icon = EXT:site_package/Resources/Public/Icons/BackendLayouts/example.svg
             }
         }
     }

@@ -1,20 +1,36 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:spaceless>
+    <div class="grid grid-cols-12">
+        <div class="col-span-12">
+            <f:for each="{data.immoimage}" as="image">
+                <div class="hidden md:block">
+                    <f:image image="{image}" class="w-full h-auto" width="1920c" height="1080c" />
+                </div>
+            </f:for>    
+            <f:if condition="{data.immoimage.0}">
+                <div class="block md:hidden">
+                    <f:for each="{data.immoimage}" as="image">
+                        <div class="w-full {f:if(condition: data.checkboxheight, then: 'h-full', else: 'minmin-h h-[60vh]')} bg-cover bg-center" style="background-image: url('{f:uri.image(image: image)}');"></div>
+                    </f:for>
+                </div>
+            </f:if>
+        </div>
+    </div>
     <div class="grid grid-cols-12" id="kaufen">
-        <div class="col-span-12 md:col-span-3">
-            <nav class="top-0 left-0 p-5 text-black">
+        <div class="col-span-12 md:col-span-4 lg:col-span-4 xl:col-span-3">
+            <nav class="top-0 left-0 p-3 md:p-5 text-black">
                 <ul class="font-medium">
                     <li>
-                        <a href="#kaufen" class="link-underline checkifactive">Immobilie kaufen</a>
+                        <a href="#kaufen" class="link-underline checkifactive">Immobilie&nbsp;kaufen</a>
                     </li>
                     <li>
-                        <a href="#verkaufen" class="link-underline">Immobilie verkaufen</a>
+                        <a href="#verkaufen" class="link-underline">Immobilie&nbsp;verkaufen</a>
                     </li>
                     <li>
-                        <a href="#bewerten" class="link-underline">Immobilie bewerten</a>
+                        <a href="#bewerten" class="link-underline">Immobilie&nbsp;bewerten</a>
                     </li>
                     <li>
-                        <a href="#uber-mich" class="link-underline">Über mich</a>
+                        <a href="#uber-mich" class="link-underline">Über&nbsp;mich</a>
                     </li>
                     <li>
                         <a href="#kontakt" class="link-underline">Kontakt</a>
@@ -22,45 +38,244 @@
                 </ul>
             </nav>
         </div>
-        <div class="col-span-12 md:col-span-8 lg:col-span-6 pt-5">
-            <f:if condition="{data.titel}">
-                <p class="text-2xl font-bold">{data.titel}</p>
-            </f:if>
+        <div class="col-span-12 md:col-span-0 p-3 md:p-5 block md:hidden">
+            <div id="myid-9">
+                <div class="col-span-12 md:col-span-9  pr-2 [&_p]:!mb-0">
+                    <f:format.html>{data.maintext}</f:format.html>    
+                </div>
+            </div>
+        </div>
+        <div class="col-span-12 md:col-span-7 lg:col-span-6 xl:col-span-6 pt-5">
+            
             <f:if condition="{data.immos}">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
                     <f:for each="{data.immos}" as="immo" iteration="iteration">
-                        <div class="property-item pb-10 cycle-{iteration.cycle} {f:if(condition: '{iteration.cycle} > 6', then: 'hidden')}">
-                            <f:if condition="{immo.url}">
-                                <f:link.typolink parameter="{immo.url}">
+                        <div class="property-item pb-8 cycle-{iteration.cycle} {f:if(condition: '{iteration.cycle} > 6', then: 'hidden')}">
 
-                                    <f:if condition="{immo.image}">
-                                        <f:for each="{immo.image}" as="image">
-                                            <f:image image="{image}" class="w-full h-auto" width="800c" height="800c" />
-                                        </f:for>
-                                    </f:if>
-                                    
-                                    <div class="flex flex-row md:flex-col justify-between">
-                                        <f:if condition="{immo.name}">
-                                            <div class="property-name text-[19px] leading-[1.2em] pt-2 p-2 md:p-0 md:pt-2 flex-1">
-                                                <f:format.html>{immo.name}</f:format.html>
-                                            </div>
+                            <f:if condition="{immo.urlos.url}">
+                                <f:then>
+                                    <f:link.typolink parameter="{immo.urlos}">
+                                        <f:if condition="{immo.image}">
+                                            <f:for each="{immo.image}" as="image">
+                                                <f:image image="{image}" class="w-full h-auto" width="800c" height="800c" />
+                                            </f:for>
                                         </f:if>
-                                        <div class="pt-2 p-2 md:p-0 md:pt-5">
-                                            <span class="link-underline-fine text-[17px] leading-[1.2em]">
-                                                Mehr erfahren
-                                            </span>
+                                        <div class="flex flex-row md:flex-col justify-between">
+                                            <f:if condition="{immo.name}">
+                                                <div class="property-name text-[19px] leading-[1.2em] pt-2 p-2 md:p-0 md:pt-2 flex-1">
+                                                    <f:format.html>{immo.name}</f:format.html>
+                                                </div>
+                                            </f:if>
+                                            <div class="pt-2 p-2 md:p-0 md:pt-2">
+                                                <span class="link-underline-fine text-[17px] leading-[1.2em]">
+                                                    Mehr erfahren
+                                                </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                </f:link.typolink>
+                                    </f:link.typolink>
+                                </f:then>
+                                <f:else>
+                                    <f:link.typolink parameter="{immo.urlos}">
+                                        <f:if condition="{immo.image}">
+                                            <f:for each="{immo.image}" as="image">
+                                                <f:image image="{image}" class="w-full h-auto" width="800c" height="800c" />
+                                            </f:for>
+                                        </f:if>
+                                        <div class="flex flex-row md:flex-col justify-between">
+                                            <f:if condition="{immo.name}">
+                                                <div class="property-name text-[19px] leading-[1.2em] pt-2 p-2 md:p-0 md:pt-2 flex-1">
+                                                    <f:format.html>{immo.name}</f:format.html>
+                                                </div>
+                                            </f:if>
+                                        </div>
+                                    </f:link.typolink>
+                                </f:else>
                             </f:if>
                         </div>
                     </f:for>
                 </div>
             </f:if>
+            <div class="p-3 pt-2 pb-4">
+                <a class="link-underline mail-arrow load-more-properties" href="javascript:void(0);">
+                    Weitere Objekte laden
+                </a>
+            </div>
         </div>
-        <div class="col-span-12 md:col-span-1 lg:col-span-3">
+            <div class="col-span-12 md:col-span-1 lg:col-span-2 xl:col-span-3">
+            </div>
         </div>
+        <div class="col-span-12">
+            <!-- Coming soon properties -->
+             <!-- Coming soon properties -->
+              <!-- Coming soon properties -->
+            <div class="grid grid-cols-12">
+            
+            <div class="col-span-12 md:col-span-4 lg:col-span-4 xl:col-span-3">
+                <!-- empty NIXcolumn  --> 
+            </div>
+            
+            <div class="col-span-12 md:col-span-7 lg:col-span-6 xl:col-span-6 pt-5">
+                <div class="p-3 md:p-0">
+                    <hr class=" border-t border-black pb-1 md:pb-2">
+                </div>
+                
+                <p class="text-center !text-[17px] leading-[1.2em]">{data.titel}</p>
+                
+                <f:if condition="{data.commingsoonimmos}">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 pt-8">
+                        <f:for each="{data.commingsoonimmos}" as="immo" iteration="iteration">
+                            <div class="property-item pb-8 cycle-{iteration.cycle} {f:if(condition: '{iteration.cycle} > 6', then: 'hidden')}">
+                                <f:if condition="{immo.urlus.url}">
+                                    <f:then>
+                                        <f:link.typolink parameter="{immo.urlus}">
+                                        <f:if condition="{immo.image}">
+                                            <f:for each="{immo.image}" as="image">
+                                                <f:image image="{image}" class="w-full h-auto" width="800c" height="800c" />
+                                            </f:for>
+                                        </f:if>
+                                        <div class="flex flex-row md:flex-col justify-between">
+                                            <f:if condition="{immo.name}">
+                                                <div class="property-name text-[19px] leading-[1.2em] pt-2 p-2 md:p-0 md:pt-2 flex-1">
+                                                    <f:format.html>{immo.name}</f:format.html>
+                                                </div>
+                                            </f:if>
+                                            <div class="pt-2 p-2 md:p-0 md:pt-2">
+                                                <span class="link-underline-fine text-[17px] leading-[1.2em]">
+                                                    Mehr erfahren
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </f:link.typolink>
+                                    </f:then>
+                                    <f:else>
+                                        <f:link.typolink parameter="{immo.urlus}">
+                                            <f:if condition="{immo.image}">
+                                                <f:for each="{immo.image}" as="image">
+                                                    <f:image image="{image}" class="w-full h-auto" width="800c" height="800c" />
+                                                </f:for>
+                                            </f:if>
+                                            <div class="flex flex-row md:flex-col justify-between">
+                                                <f:if condition="{immo.name}">
+                                                    <div class="property-name text-[19px] leading-[1.2em] pt-2 p-2 md:p-0 md:pt-2 flex-1">
+                                                        <f:format.html>{immo.name}</f:format.html>
+                                                    </div>
+                                                </f:if>
+                                                
+                                            </div>
+                                        </f:link.typolink>
+                                    </f:else>
+                                    
+                                </f:if>
+                            </div>
+                        </f:for>
+                    </div>
+                </f:if>
+                <div class="p-3 pt-2 pb-2">
+                    <a class="link-underline mail-arrow load-more-properties2" href="javascript:void(0);">
+                        Weitere Objekte laden
+                    </a>
+                </div>
+            </div>
+                <div class="col-span-12 md:col-span-1 lg:col-span-2 xl:col-span-3">
+                </div>
+            </div>
+        
+            </div>
+            <!-- Coming soon properties -->
+             <!-- Coming soon properties -->
+              <!-- Coming soon properties -->
         </div>
     </div>
+    
+    <div class="grid grid-cols-12 gap-0 relative hidden md:grid">
+        <div class="col-span-12 md:col-span-8 lg:col-span-6">
+            <div class="relative">
+                <div class="p-5 pt-[5vw]" id="myid-8">
+                    <f:format.html>{data.maintext}</f:format.html>
+                </div>
+            </div>
+            <div class="relative w-full"></div>    
+        </div>
+        
+    </div>
+
 </f:spaceless>
+
+<style>
+    .property-item {
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+    }
+    
+    .property-item.hidden {
+        opacity: 0;
+        display: none;
+    }
+    
+    .property-item.fade-in {
+        display: block;
+        animation: fadeIn 0.5s ease-in-out forwards;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        const loadMoreBtn = document.querySelector('.load-more-properties');
+        const loadMoreBtn2 = document.querySelector('.load-more-properties2');
+
+        if (document.querySelectorAll('.property-item.hidden').length === 0) {
+            loadMoreBtn.style.display = 'none';
+        }
+        if (document.querySelectorAll('.property-item-2.hidden').length === 0) {
+            loadMoreBtn2.style.display = 'none';
+        }
+        
+        loadMoreBtn.addEventListener('click', function() {
+            const hiddenProperties = document.querySelectorAll('.property-item.hidden');
+            let counter = 0;
+            
+            hiddenProperties.forEach(function(property) {
+                if (counter < 3) {
+                    property.classList.remove('hidden');
+                    property.classList.add('fade-in');
+                    counter++;
+                }
+            });
+            
+            // Hide the button if no more hidden properties
+            if (document.querySelectorAll('.property-item.hidden').length === 0) {
+                loadMoreBtn.style.display = 'none';
+            }
+        });
+        loadMoreBtn2.addEventListener('click', function() {
+            const hiddenProperties = document.querySelectorAll('.property-item-2.hidden');
+            let counter = 0;
+            
+            hiddenProperties.forEach(function(property) {
+                if (counter < 3) {
+                    property.classList.remove('hidden');
+                    property.classList.add('fade-in');
+                    counter++;
+                }
+            });
+            
+            // Hide the button if no more hidden properties
+            if (document.querySelectorAll('.property-item-2.hidden').length === 0) {
+                loadMoreBtn.style.display = 'none';
+            }
+        });
+    });
+</script>
 </html>

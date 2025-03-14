@@ -1,0 +1,67 @@
+name: danidani/immodetail
+typeName: danidani_immodetail
+group: default
+prefixFields: true
+prefixType: full
+basics:
+  - TYPO3/Appearance
+  - TYPO3/Links
+  - TYPO3/Categories
+fields:
+  - identifier: header
+    useExistingField: true
+    label: 'Only for orientation purposes'
+  - identifier: nameoftheproperty
+    type: Textarea
+    enableRichtext: true
+    label: 'Name of the property'
+    required: false
+    richtextConfiguration: full
+  - identifier: longerdetails
+    type: Textarea
+    enableRichtext: true
+    label: 'Text for the details'
+    required: false
+    richtextConfiguration: full
+  - identifier: longertext
+    type: Textarea
+    enableRichtext: true
+    label: 'Long text with more information'
+    required: false
+    richtextConfiguration: full
+  - identifier: text1
+    type: Text
+    label: 'Text for first link'
+    required: false
+  - identifier: link1
+    type: Link
+    label: 'Link 1'
+    required: false
+  - identifier: text2
+    type: Text
+    label: 'Text for second link'
+    required: false
+  - identifier: link2
+    type: Link
+    label: 'Link 2'
+    required: false
+  - identifier: text3
+    type: Text
+    label: 'Text for third link'
+    required: false
+  - identifier: link3
+    type: Link
+    label: 'Link 3'
+    required: false
+  - identifier: vimeoId
+    type: Text
+    label: 'Vimeo Video ID'
+    required: false
+  - identifier: images
+    type: File
+    label: 'Images for carousel'
+    required: false
+    multiple: true
+    maxItems: 12
+    enableSorting: true
+    enableDragAndDrop: true  
