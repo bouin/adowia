@@ -260,15 +260,17 @@
   }
 }
 .minmin-h {
+  
   @media screen and (min-width: 1400px) {
     min-height: 900px;
+  }
+  @media screen and (min-width: 1800px) {
+    min-height: 1300px;
   }
   @media screen and (max-width: 1400px) {
     min-height: 850px;
   }
-  @media screen and (max-width: 1200px) {
-    min-height: 710px;
-  }
+  
   @media screen and (max-width: 768px) {
     min-height: 750px;
   }

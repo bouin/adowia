@@ -1063,6 +1063,10 @@ body {
   grid-column: span 9 / span 9;
 }
 
+.col-start-1 {
+  grid-column-start: 1;
+}
+
 .col-start-2 {
   grid-column-start: 2;
 }
@@ -1077,10 +1081,6 @@ body {
 
 .col-start-auto {
   grid-column-start: auto;
-}
-
-.col-start-1 {
-  grid-column-start: 1;
 }
 
 .float-start {
@@ -2592,11 +2592,11 @@ body {
   @media screen and (min-width: 1400px) {
     min-height: 900px;
   }
+  @media screen and (min-width: 1800px) {
+    min-height: 1300px;
+  }
   @media screen and (max-width: 1400px) {
     min-height: 850px;
-  }
-  @media screen and (max-width: 1200px) {
-    min-height: 710px;
   }
   @media screen and (max-width: 768px) {
     min-height: 750px;
@@ -2683,12 +2683,12 @@ body {
     grid-column: span 9 / span 9;
   }
 
-  .md\:col-start-2 {
-    grid-column-start: 2;
-  }
-
   .md\:col-start-1 {
     grid-column-start: 1;
+  }
+
+  .md\:col-start-2 {
+    grid-column-start: 2;
   }
 
   .md\:mb-0 {
