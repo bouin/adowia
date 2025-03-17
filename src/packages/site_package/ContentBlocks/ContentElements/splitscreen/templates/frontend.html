@@ -92,7 +92,8 @@
                     <!-- Text overlay if available -->
                     <f:if condition="{data.text}">
                         <div class="absolute top-4 right-4 text-white">
-                            <f:format.html>{data.text}</f:format.html>
+                            
+                            <h1><f:format.stripTags allowedTags="br">{data.text}</f:format.stripTags></h1>
                         </div>
                     </f:if>
                 </f:if>

@@ -9,41 +9,109 @@
 
 <f:section name="Content">
     <!-- Start of the content rendering -->
-    <div class="grid md:grid-cols-2 gap-0 relative">
-        <!-- Left Image -->
-        <div class="relative w-full">
-            <f:if condition="{data.image1.0}">
-                <f:image image="{data.image1.0}" class="w-full object-cover pb-10" style="padding-bottom: 10px;" width="100%" height="100%"/>
-                
-                <!-- Menu overlay if checkbox is checked -->
-                <f:if condition="{data.checkboxes}">
-                    <p>Menu</p>
-                </f:if>
-                <f:if condition="{data.textus}">
-                    <div class="absolute left-0 bottom-0 p-5 pr-20 text-black">
-                        <div class="text-black">
-                            <p>Dominique Waser</p>
-                            <p><span class="mail-arrow">Inhaber, Geschäftsführer</span></p>
-                            <br>
+    <div id="c{data.uid}" class="contentblock-element frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+        <div class="row g-0 position-relative {f:if(condition: data.checkboxheight, then: 'min-vh-100')}" id="{f:if(condition: data.checkformenu, then:'uber-mich')}">
+            <!-- Left Image -->
+            <div class="{f:if(condition: data.image1.0, then: 'col-12 col-md-6', else: 'col-12 col-xl-6')} position-relative">
+                <f:if condition="{data.image1.0}">
+                    <f:then>
+                        <div class="w-100 {f:if(condition: data.checkboxheight, then: 'h-100', else: 'vh-60')}">
+                            <f:image image="{data.image1.0}" alt="" class="w-100 h-100 object-fit-cover" width="200c" height="200c" />
                         </div>
-                        <f:transform.html>{data.textus}</f:transform.html>
-                    </div>
+                        
+                        <!-- Menu overlay if checkbox is checked -->
+                        <f:if condition="{data.checkboxes}">
+                            <nav class="position-absolute top-0 start-0 p-4 text-black">
+                                <ul class="list-unstyled fw-medium">
+                                    <li>
+                                        <a href="#kaufen" class="text-decoration-underline">Immobilie kaufen</a>
+                                    </li>
+                                    <li>
+                                        <a href="#verkaufen" class="text-decoration-underline">Immobilie verkaufen</a>
+                                    </li>
+                                    <li>
+                                        <a href="#bewerten" class="text-decoration-underline">Immobilie bewerten</a>
+                                    </li>
+                                    <li>
+                                        <a href="#uber-mich" class="text-decoration-underline {f:if(condition: data.checkformenu, then:'checkifactive')}">Über mich</a>
+                                    </li>
+                                    <li>
+                                        <a href="#kontakt" class="text-decoration-underline">Kontakt</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </f:if>
+                        <f:if condition="{data.textus}">
+                            <div class="position-absolute bottom-0 start-0 p-4 text-black">
+                                <div class="text-black">
+                                    <p>Dominique Andreas Waser</p>
+                                    <p><span class="mail-arrow">Inhaber, Geschäftsführer</span></p>
+                                    <br>
+                                </div>
+                                <div id="mybr-{data.uid}">
+                                    <f:transform.html>{data.textus}</f:transform.html>
+                                </div>
+                            </div>
+                        </f:if>
+                    </f:then>
+                    <f:else>
+                        <div class="w-100 {f:if(condition: data.checkboxheight, then: 'h-100', else: 'vh-60')}">
+                            <f:image image="{data.image1.0}" alt="" class="w-100 h-100 object-fit-cover" width="200c" height="200c" />
+                        </div>
+                        <!-- f:if(condition: data.checkboxheight, then: 'h-full', else: 'minmin-h h-[60vh]')} -->
+                        <!-- Menu overlay if checkbox is checked -->
+                        <f:if condition="{data.checkboxes}">
+                            <nav class="position-relative position-xl-absolute top-0 start-0 p-4 text-black">
+                                <ul class="list-unstyled fw-medium">
+                                    <li>
+                                        <a href="#kaufen" class="text-decoration-underline">Immobilie&nbsp;kaufen</a>
+                                    </li>
+                                    <li>
+                                        <a href="#verkaufen" class="text-decoration-underline">Immobilie&nbsp;verkaufen</a>
+                                    </li>
+                                    <li>
+                                        <a href="#bewerten" class="text-decoration-underline">Immobilie&nbsp;bewerten</a>
+                                    </li>
+                                    <li>
+                                        <a href="#uber-mich" class="text-decoration-underline {f:if(condition: data.checkformenu, then:'checkifactive')}">Über&nbsp;mich</a>
+                                    </li>
+                                    <li>
+                                        <a href="#kontakt" class="text-decoration-underline">Kontakt</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </f:if>
+                        <f:if condition="{data.textus}">
+                            <div class="position-relative position-xl-absolute bottom-0 start-0 p-4 text-black">
+                                <div class="text-black">
+                                    <p>Dominique Andreas Waser</p>
+                                    <p><span class="mail-arrow">Inhaber, Geschäftsführer</span></p>
+                                    <br>
+                                </div>
+                                <div id="mybr-{data.uid}" class="pe-4">
+                                    <f:transform.html>{data.textus}</f:transform.html>
+                                </div>
+                            </div>
+                        </f:if>
+                    </f:else>
                 </f:if>
-            </f:if>
-        </div>
+            </div>
 
-        <!-- Right Image -->
-        <div class="relative w-full">
-            <f:if condition="{data.image2.0}">
-            
-                <f:image image="{data.image2.0}" class="w-full object-cover" width="100%" height="100%"/>
-                <!-- Text overlay if available -->
-                <f:if condition="{data.text}">
-                    <div class="absolute top-4 right-4 text-white">
-                        <f:transform.html>{data.text}</f:transform.html>
+            <!-- Right Image -->
+            <div class="{f:if(condition: data.image1.0, then: 'col-12 col-md-6', else: 'col-12 col-xl-6')} position-relative">
+                <f:if condition="{data.image2.0}">
+                    <div class="w-100 {f:if(condition: data.checkboxheight, then: 'h-100', else: 'vh-60')}">
+                        <f:image image="{data.image2.0}" alt="" class="w-100 h-100 object-fit-cover" width="200c" height="200c" />
                     </div>
+                    
+                    <!-- Text overlay if available -->
+                    <f:if condition="{data.text}">
+                        <div class="position-absolute top-0 end-0 p-4 text-white">
+                            <h1><f:format.stripTags allowedTags="br">{data.text}</f:format.stripTags></h1>
+                        </div>
+                    </f:if>
                 </f:if>
-            </f:if>
+            </div>
         </div>
     </div>
 </f:section>
