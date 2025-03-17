@@ -10,14 +10,14 @@
 <f:section name="Content">
     <!-- Start of the content rendering -->
     <div id="c{data.uid}" class="contentblock-element frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
-        <div class="row g-0 position-relative {f:if(condition: data.checkboxheight, then: 'min-vh-100')}" id="{f:if(condition: data.checkformenu, then:'uber-mich')}">
+        <div class="row g-0 position-relative" id="{f:if(condition: data.checkformenu, then:'uber-mich')}">
             <!-- Left Image -->
             <div class="{f:if(condition: data.image1.0, then: 'col-12 col-md-6', else: 'col-12 col-xl-6 huer134')} position-relative">
                 <f:if condition="{data.image1.0}">
                     <f:then>
                         
                         <div class="w-100 vh-60">
-                            <img src="/fileadmin/{data.image1.0.identifier}" alt="" class="w-100 h-100 object-fit-cover" width="400c" height="400c" />
+                            <img src="/fileadmin/{data.image1.0.identifier}" alt="" class="w-100 object-fit-cover" width="400c" height="400c" />
                         </div>
                         
                         <!-- Menu overlay if checkbox is checked -->
@@ -58,7 +58,7 @@
                     <f:else>
                         <div class="w-100 vh-60">
                             <f:if condition="{data.image1.0}">
-                                <img src="/fileadmin/{data.image1.0.identifier}" alt="" class="elo133 w-100 h-100 object-fit-cover" width="400c" height="400c" />    
+                                <img src="/fileadmin/{data.image1.0.identifier}" alt="" class="elo133 w-100  object-fit-cover" width="400c" height="400c" />    
                             </f:if>
                         </div>
                         <!-- f:if(condition: data.checkboxheight, then: 'h-full', else: 'minmin-h h-[60vh]')} -->
@@ -103,8 +103,8 @@
             <!-- Right Image -->
             <div class="{f:if(condition: data.image1.0, then: 'col-12 col-md-6', else: 'col-12 col-xl-6 hier')} position-relative">
                 <f:if condition="{data.image2.0}">
-                    <div class="w-100 {f:if(condition: data.checkboxheight, then: 'h-100', else: 'vh-60')}">
-                        <img src="/fileadmin/{data.image2.0.identifier}" alt="" class="w-100 h-100 object-fit-cover" width="400c" height="400c" />
+                    <div class="w-100 vh-60">
+                        <img src="/fileadmin/{data.image2.0.identifier}" alt="" class="w-100  object-fit-cover" width="400c" height="400c" />
                     </div>
                     
                     <!-- Text overlay if available -->
