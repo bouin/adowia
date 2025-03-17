@@ -2656,6 +2656,10 @@ body {
     grid-column: span 9 / span 9;
   }
 
+  .md\:col-span-10 {
+    grid-column: span 10 / span 10;
+  }
+
   .md\:col-start-2 {
     grid-column-start: 2;
   }
@@ -2768,6 +2772,18 @@ body {
 
   .md\:pt-7 {
     padding-top: 1.75rem;
+  }
+
+  .md\:pb-12 {
+    padding-bottom: 3rem;
+  }
+
+  .md\:pt-10 {
+    padding-top: 2.5rem;
+  }
+
+  .md\:pb-10 {
+    padding-bottom: 2.5rem;
   }
 }
 
