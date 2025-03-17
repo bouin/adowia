@@ -273,3 +273,22 @@
     min-height: 750px;
   }
 }
+.itouchedthetext a {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0px;
+    left: 0;
+    background-color: black;
+    transition: width 0.3s ease-in-out;
+  }
+  &:hover {
+      &:after {
+        width: 100%;
+      }
+    
+  }
+}
