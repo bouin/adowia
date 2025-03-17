@@ -51,37 +51,48 @@
     const menuButton = document.getElementById('mobile-menu-button');
     const menu = document.getElementById('mobile-menu');
     const header = document.querySelector('.main-navigation-header');
+    const mediaQuery = window.matchMedia('(min-width: 768px)');
     
     // Set initial position
-    menu.style.top = header.offsetHeight + 'px';
-    
-    // Initially hide the menu
+    menu.style.top = header.offsetHeight - 2 + 'px';
     menu.style.height = '0';
     menu.style.opacity = '0';
     
     let menuHeight;
     
-    menuButton.addEventListener('click', function() {
-        this.classList.toggle('active');
+    function toggleMenu(event) {
+        if (mediaQuery.matches) return; // Disable on desktop
         
-        if (menu.style.height === '0px' || menu.style.height === '') {
-            // Get the natural height of the menu
-            menu.style.height = 'auto';
-            menu.style.opacity = '0';
-            menuHeight = menu.offsetHeight + 'px';
-            menu.style.height = '0';
+        if (event.type === 'click') {
+            // Toggle behavior only for click
+            menuButton.classList.toggle('active');
             
-            // Trigger reflow
-            menu.offsetHeight;
-            
-            // Animate to full height
-            menu.style.height = menuHeight;
-            menu.style.opacity = '1';
+            if (menu.style.height === '0px' || menu.style.height === '') {
+                menu.style.height = 'auto';
+                menu.style.opacity = '0';
+                menuHeight = menu.offsetHeight + 'px';
+                menu.style.height = '0';
+                
+                menu.offsetHeight; // Trigger reflow
+                
+                menu.style.height = 'auto';
+                menu.style.opacity = '1';
+            } else {
+                menu.style.height = '0';
+                menu.style.opacity = '0';
+            }
         } else {
+            // Close menu for scroll and resize
+            menuButton.classList.remove('active');
             menu.style.height = '0';
             menu.style.opacity = '0';
         }
-    });
+    }
+
+    // Add event listeners
+    menuButton.addEventListener('click', toggleMenu);
+    window.addEventListener('scroll', toggleMenu);
+    window.addEventListener('resize', toggleMenu);
 </script>
 
 <style>
