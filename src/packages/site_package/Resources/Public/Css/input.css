@@ -131,6 +131,14 @@
     .link-underline, .link-underline-hover {
       position: relative;
     }
+    .property-item:hover{
+      .link-underline-fine{
+          &:after {
+            width: 0%;
+          }
+        
+      }
+    }
     .link-underline-fine{
       &:after {
           content: '';
