@@ -4,13 +4,17 @@
         <div class="col-span-12">
             <f:for each="{data.immoimage}" as="image">
                 <div class="hidden md:block">
+                
                     <f:image image="{image}" class="w-full h-auto" width="1920c" height="1080c" />
+                
                 </div>
             </f:for>    
             <f:if condition="{data.immoimage.0}">
                 <div class="block md:hidden">
                     <f:for each="{data.immoimage}" as="image">
-                        <div class="w-full {f:if(condition: data.checkboxheight, then: 'h-full', else: 'minmin-h h-[60vh]')} bg-cover bg-center" style="background-image: url('{f:uri.image(image: image)}');"></div>
+                        
+                            <div class="w-full {f:if(condition: data.checkboxheight, then: 'h-full', else: 'minmin-h h-[60vh]')} bg-cover bg-center" style="background-image: url('{f:uri.image(image: image)}');"></div>
+                        
                     </f:for>
                 </div>
             </f:if>
@@ -57,7 +61,9 @@
                                     <f:link.typolink parameter="{immo.urlos}">
                                         <f:if condition="{immo.image}">
                                             <f:for each="{immo.image}" as="image">
-                                                <f:image image="{image}" class="w-full h-auto" width="800c" height="800c" />
+                                                
+                                                    <f:image image="{image}" class="w-full h-auto" width="800c" height="800c" />
+                                                
                                             </f:for>
                                         </f:if>
                                         <div class="flex flex-row md:flex-col justify-between">
@@ -78,7 +84,9 @@
                                     <f:link.typolink parameter="{immo.urlos}">
                                         <f:if condition="{immo.image}">
                                             <f:for each="{immo.image}" as="image">
-                                                <f:image image="{image}" class="w-full h-auto" width="800c" height="800c" />
+                                            
+                                                    <f:image image="{image}" class="w-full h-auto" width="800c" height="800c" />
+                                            
                                             </f:for>
                                         </f:if>
                                         <div class="flex flex-row md:flex-col justify-between">
@@ -130,7 +138,9 @@
                                         <f:link.typolink parameter="{immo.urlus}">
                                         <f:if condition="{immo.image}">
                                             <f:for each="{immo.image}" as="image">
-                                                <f:image image="{image}" class="w-full h-auto" width="800c" height="800c" />
+                                                
+                                                    <f:image image="{image}" class="w-full h-auto" width="800c" height="800c" />
+                                                
                                             </f:for>
                                         </f:if>
                                         <div class="flex flex-row md:flex-col justify-between">
@@ -151,7 +161,9 @@
                                         <f:link.typolink parameter="{immo.urlus}">
                                             <f:if condition="{immo.image}">
                                                 <f:for each="{immo.image}" as="image">
-                                                    <f:image image="{image}" class="w-full h-auto" width="800c" height="800c" />
+                                                    
+                                                        <f:image image="{image}" class="w-full h-auto" width="800c" height="800c" />
+                                                    
                                                 </f:for>
                                             </f:if>
                                             <div class="flex flex-row md:flex-col justify-between">

@@ -29,12 +29,14 @@ fields:
     allowed: common-image-types
     required: false
     label: 'Image 1'
+    maxitems: 1
   - identifier: image2
     type: File
     extendedPalette: true
     allowed: common-image-types
     required: false
     label: 'Image 2'
+    maxitems: 1
   - identifier: text
     type: Text
     label: 'Text'
