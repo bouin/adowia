@@ -96,7 +96,14 @@
                                     <f:for each="{data.images}" as="file">
                                         <div class="swiper-slide">
                                             
-                                                <f:image image="{file}" width="1920" class="slider-mom"/>
+                                            
+                                            <f:image 
+                                                image="{file}" 
+                                                width="1920c" 
+                                                height="2000c" 
+                                                class="slider-mom" 
+                                                alt="Immobilienpartner rund um den Thunersee {newsItem.title}"
+                                            />
                                             
                                         </div>
                                     </f:for>
@@ -113,7 +120,13 @@
                                 <f:for each="{data.images}" as="file">
                                     <div class="swiper-slide">
                                         
-                                            <f:image image="{file}" width="1920" class="slider-mom"/>
+                                        <f:image 
+                                            image="{file}" 
+                                            width="640c" 
+                                            height="670c" 
+                                            class="slider-mom" 
+                                            alt="{newsItem.title}"
+                                        />
                                         
                                     </div>
                                 </f:for>
