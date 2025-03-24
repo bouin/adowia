@@ -45,11 +45,15 @@
                             </f:if>
                             <div class="flex justify-between">
                                 <div>
-                                    <f:link.typolink parameter="{data.link1}" class="link-underline-fine !text-[17px] mr-4" target="_blank">{data.text1}</f:link.typolink>
-                                    <f:link.typolink parameter="{data.link2}" class="link-underline-fine !text-[17px]" target="_blank">{data.text2}</f:link.typolink>
+                                    <f:link.email email="{data.text1}" class="link-underline-fine mail-arrow text-[17px] " target="_blank">{data.textformemail}</f:link.email>
+                                    <f:comment>
+                                        <f:link.typolink parameter="{data.link2}" class="link-underline-fine !text-[17px]" target="_blank">{data.text2}</f:link.typolink>
+                                    </f:comment>
                                 </div>
                                 <div>
-                                    <f:link.typolink parameter="{data.link3}" class="link-underline-fine !text-[17px]" target="_blank">{data.text3}</f:link.typolink>
+                                    <f:comment>
+                                        <f:link.typolink parameter="{data.link3}" class="link-underline-fine !text-[17px]" target="_blank">{data.text3}</f:link.typolink>
+                                    </f:comment>
                                 </div>
                             </div>
                                 
