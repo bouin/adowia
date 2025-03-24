@@ -4,17 +4,13 @@
         <div class="col-span-12">
             <f:for each="{data.immoimage}" as="image">
                 <div class="hidden md:block">
-                
                     <f:image image="{image}" class="w-full h-auto" width="1920c" height="1080c" />
-                
                 </div>
             </f:for>    
             <f:if condition="{data.immoimage.0}">
                 <div class="block md:hidden">
                     <f:for each="{data.immoimage}" as="image">
-                        
-                            <div class="w-full {f:if(condition: data.checkboxheight, then: 'h-full', else: 'minmin-h h-[60vh]')} bg-cover bg-center" style="background-image: url('{f:uri.image(image: image)}');"></div>
-                        
+                        <div class="w-full {f:if(condition: data.checkboxheight, then: 'h-full', else: 'minmin-h h-[60vh]')} bg-cover bg-center" style="background-image: url('{f:uri.image(image: image)}');"></div>
                     </f:for>
                 </div>
             </f:if>
@@ -50,64 +46,68 @@
             </div>
         </div>
         <div class="col-span-12 md:col-span-7 lg:col-span-6 xl:col-span-6 pt-5">
-            
-            <f:if condition="{data.immos}">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-                    <f:for each="{data.immos}" as="immo" iteration="iteration">
-                        <div class="property-item pb-8 cycle-{iteration.cycle} {f:if(condition: '{iteration.cycle} > 6', then: 'hidden')}">
 
-                            <f:if condition="{immo.urlos.url}">
-                                <f:then>
-                                    <f:link.typolink parameter="{immo.urlos}">
-                                        <f:if condition="{immo.image}">
-                                            <f:for each="{immo.image}" as="image">
-                                                
+            <f:cObject typoscriptObjectPath="lib.topnews"></f:cObject>
+
+            <f:comment>
+                <f:if condition="{data.immos}">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                        <f:for each="{data.immos}" as="immo" iteration="iteration">
+                            <div class="property-item pb-8 cycle-{iteration.cycle} {f:if(condition: '{iteration.cycle} > 6', then: 'hidden')}">
+
+                                <f:if condition="{immo.urlos.url}">
+                                    <f:then>
+                                        <f:link.typolink parameter="{immo.urlos}">
+                                            <f:if condition="{immo.image}">
+                                                <f:for each="{immo.image}" as="image">
+
                                                     <f:image image="{image}" class="w-full h-auto" width="800c" height="800c" />
-                                                
-                                            </f:for>
-                                        </f:if>
-                                        <div class="flex flex-row md:flex-col justify-between">
-                                            <f:if condition="{immo.name}">
-                                                <div class="property-name text-[19px] leading-[1.2em] pt-2 p-2 md:p-0 md:pt-2 flex-1">
-                                                    <f:format.html>{immo.name}</f:format.html>
-                                                </div>
+
+                                                </f:for>
                                             </f:if>
-                                            <div class="pt-2 p-2 md:p-0 md:pt-2">
+                                            <div class="flex flex-row md:flex-col justify-between">
+                                                <f:if condition="{immo.name}">
+                                                    <div class="property-name text-[19px] leading-[1.2em] pt-2 p-2 md:p-0 md:pt-2 flex-1">
+                                                        <f:format.html>{immo.name}</f:format.html>
+                                                    </div>
+                                                </f:if>
+                                                <div class="pt-2 p-2 md:p-0 md:pt-2">
                                                 <span class="link-underline-fine text-[17px] leading-[1.2em]">
                                                     Mehr erfahren
                                                 </span>
-                                            </div>
-                                        </div>
-                                    </f:link.typolink>
-                                </f:then>
-                                <f:else>
-                                    <f:link.typolink parameter="{immo.urlos}">
-                                        <f:if condition="{immo.image}">
-                                            <f:for each="{immo.image}" as="image">
-                                            
-                                                    <f:image image="{image}" class="w-full h-auto" width="800c" height="800c" />
-                                            
-                                            </f:for>
-                                        </f:if>
-                                        <div class="flex flex-row md:flex-col justify-between">
-                                            <f:if condition="{immo.name}">
-                                                <div class="property-name text-[19px] leading-[1.2em] pt-2 p-2 md:p-0 md:pt-2 flex-1">
-                                                    <f:format.html>{immo.name}</f:format.html>
                                                 </div>
+                                            </div>
+                                        </f:link.typolink>
+                                    </f:then>
+                                    <f:else>
+                                        <f:link.typolink parameter="{immo.urlos}">
+                                            <f:if condition="{immo.image}">
+                                                <f:for each="{immo.image}" as="image">
+
+                                                    <f:image image="{image}" class="w-full h-auto" width="800c" height="800c" />
+
+                                                </f:for>
                                             </f:if>
-                                        </div>
-                                    </f:link.typolink>
-                                </f:else>
-                            </f:if>
-                        </div>
-                    </f:for>
+                                            <div class="flex flex-row md:flex-col justify-between">
+                                                <f:if condition="{immo.name}">
+                                                    <div class="property-name text-[19px] leading-[1.2em] pt-2 p-2 md:p-0 md:pt-2 flex-1">
+                                                        <f:format.html>{immo.name}</f:format.html>
+                                                    </div>
+                                                </f:if>
+                                            </div>
+                                        </f:link.typolink>
+                                    </f:else>
+                                </f:if>
+                            </div>
+                        </f:for>
+                    </div>
+                </f:if>
+                <div class="p-3 pt-2 pb-4">
+                    <a class="link-underline mail-arrow load-more-properties" href="javascript:void(0);">
+                        Weitere Objekte laden
+                    </a>
                 </div>
-            </f:if>
-            <div class="p-3 pt-2 pb-4">
-                <a class="link-underline mail-arrow load-more-properties" href="javascript:void(0);">
-                    Weitere Objekte laden
-                </a>
-            </div>
+            </f:comment>
         </div>
             <div class="col-span-12 md:col-span-1 lg:col-span-2 xl:col-span-3">
             </div>
@@ -128,65 +128,10 @@
                 </div>
                 
                 <p class="text-center !text-[17px] leading-[1.2em]">{data.titel}</p>
-                
-                <f:if condition="{data.commingsoonimmos}">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 pt-8">
-                        <f:for each="{data.commingsoonimmos}" as="immo" iteration="iteration">
-                            <div class="property-item pb-8 cycle-{iteration.cycle} {f:if(condition: '{iteration.cycle} > 6', then: 'hidden')}">
-                                <f:if condition="{immo.urlus.url}">
-                                    <f:then>
-                                        <f:link.typolink parameter="{immo.urlus}">
-                                        <f:if condition="{immo.image}">
-                                            <f:for each="{immo.image}" as="image">
-                                                
-                                                    <f:image image="{image}" class="w-full h-auto" width="800c" height="800c" />
-                                                
-                                            </f:for>
-                                        </f:if>
-                                        <div class="flex flex-row md:flex-col justify-between">
-                                            <f:if condition="{immo.name}">
-                                                <div class="property-name text-[19px] leading-[1.2em] pt-2 p-2 md:p-0 md:pt-2 flex-1">
-                                                    <f:format.html>{immo.name}</f:format.html>
-                                                </div>
-                                            </f:if>
-                                            <div class="pt-2 p-2 md:p-0 md:pt-2">
-                                                <span class="link-underline-fine text-[17px] leading-[1.2em]">
-                                                    Mehr erfahren
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </f:link.typolink>
-                                    </f:then>
-                                    <f:else>
-                                        <f:link.typolink parameter="{immo.urlus}">
-                                            <f:if condition="{immo.image}">
-                                                <f:for each="{immo.image}" as="image">
-                                                    
-                                                        <f:image image="{image}" class="w-full h-auto" width="800c" height="800c" />
-                                                    
-                                                </f:for>
-                                            </f:if>
-                                            <div class="flex flex-row md:flex-col justify-between">
-                                                <f:if condition="{immo.name}">
-                                                    <div class="property-name text-[19px] leading-[1.2em] pt-2 p-2 md:p-0 md:pt-2 flex-1">
-                                                        <f:format.html>{immo.name}</f:format.html>
-                                                    </div>
-                                                </f:if>
-                                                
-                                            </div>
-                                        </f:link.typolink>
-                                    </f:else>
-                                    
-                                </f:if>
-                            </div>
-                        </f:for>
-                    </div>
-                </f:if>
-                <div class="p-3 pt-2 pb-2">
-                    <a class="link-underline mail-arrow load-more-properties2" href="javascript:void(0);">
-                        Weitere Objekte laden
-                    </a>
-                </div>
+
+                <f:cObject typoscriptObjectPath="lib.comingsoonnews"></f:cObject>
+
+
             </div>
                 <div class="col-span-12 md:col-span-1 lg:col-span-2 xl:col-span-3">
                 </div>
@@ -270,6 +215,7 @@
             if (document.querySelectorAll('.property-item.hidden').length === 0) {
                 loadMoreBtn.style.display = 'none';
             }
+
         });
         loadMoreBtn2.addEventListener('click', function() {
             const hiddenProperties = document.querySelectorAll('.property-item-2.hidden');
@@ -283,9 +229,9 @@
                 }
             });
             
-            // Hide the button if no more hidden properties
+            // Fixed: Changed loadMoreBtn to loadMoreBtn2
             if (document.querySelectorAll('.property-item-2.hidden').length === 0) {
-                loadMoreBtn.style.display = 'none';
+                loadMoreBtn2.style.display = 'none';  // This was the bug - was using loadMoreBtn instead of loadMoreBtn2
             }
         });
     });

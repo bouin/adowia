@@ -250,12 +250,33 @@ plugin.tx_seo.config {
 
 lib.textforfooter1 = RECORDS
 lib.textforfooter1 {
-    source = 11
+    source = 22
     sourceInsertData = 1
     tables = tt_content
     select {
         orderBy = sorting
-        pidInList = 2
+        pidInList = 9
+    }
+}
+
+lib.topnews = RECORDS
+lib.topnews {
+    source = 23
+    sourceInsertData = 1
+    tables = tt_content
+    select {
+        orderBy = sorting
+        pidInList = 9
+    }
+}
+lib.comingsoonnews = RECORDS
+lib.comingsoonnews {
+    source = 30
+    sourceInsertData = 1
+    tables = tt_content
+    select {
+        orderBy = sorting
+        pidInList = 9
     }
 }
 
@@ -265,10 +286,6 @@ lib.myImage {
     source = 518  # The image ID you want to fetch
     sourceInsertData = 1
     tables = sys_file  # The table containing the image
-}
-
-tx_news.templateLayouts {
-   1 = A custom layout
 }
 
 plugin.tx_news {
@@ -282,4 +299,5 @@ plugin.tx_news {
             showPrevNextWithinCategories = 1
         }
     }
-} 
+}
+

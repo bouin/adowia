@@ -6,12 +6,12 @@
 		Partials/List/Item.html
 -->
 
-<div class="property-item pb-8 cycle-{iterator.cycle} {f:if(condition: '{iterator.cycle} > 6', then: 'hidden')}" itemscope="itemscope" itemtype="https://schema.org/Article">
+<div class="property-item-2 pb-8 cycle-{iterator.cycle} {f:if(condition: '{iterator.cycle} > 6', then: 'hidden')}" itemscope="itemscope" itemtype="https://schema.org/Article">
     <n:excludeDisplayedNews newsItem="{newsItem}"/>
     
     <f:if condition="{newsItem.mediaPreviews}">
         <f:then>
-            <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+
                 <f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
                     <f:if condition="{mediaElement.originalResource.type} == 2">
                         <f:image image="{mediaElement}" 
@@ -31,16 +31,12 @@
 							{newsItem.teaser -> f:format.html()}
 						</f:if>
                     </div>
-                    <div class="pt-2 p-2 md:p-0 md:pt-2">
-                        <span class="link-underline-fine text-[17px] leading-[1.2em]">
-                            Mehr erfahren
-                        </span>
-                    </div>
+
                 </div>
-            </n:link>
+
         </f:then>
 		<f:else>
-			<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+
 				<div class="flex flex-row md:flex-col justify-between">
 					<div class="property-name text-[19px] leading-[1.2em] pt-2 p-2 md:p-0 md:pt-2 flex-1" itemprop="headline">
 						<f:format.html>{newsItem.title}</f:format.html>
@@ -49,13 +45,9 @@
 							{newsItem.teaser -> f:format.html()}
 						</f:if>
 					</div>
-					<div class="pt-2 p-2 md:p-0 md:pt-2">
-                        <span class="link-underline-fine text-[17px] leading-[1.2em]">
-                            Mehr erfahren
-                        </span>
-					</div>
+
 				</div>
-			</n:link>
+
 		</f:else>
     </f:if>
 </div>
