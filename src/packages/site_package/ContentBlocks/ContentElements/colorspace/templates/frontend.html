@@ -29,7 +29,11 @@
                         <f:format.html>{data.longText}</f:format.html>
                     </div>
                     <div class="col-span-12 xl:col-span-5 pl-0 md:pl-5 pt-12 xl:pt-0 lx:pl-0">
-                        <a class="link-underline mail-arrow" href="mailto:waser@adowia.ch?subject={f:if(condition: data.verkaufen, then: 'Ich möchte meine Immobilie verkaufen')}{f:if(condition: data.bewerten, then: 'Ich möchte gerne einen Termin für eine Bewertung vereinbaren')}">{data.mailus}</a>
+                        <f:link.email 
+                                email="info@adowia.ch" 
+                                class="link-underline mail-arrow works2334 {data.mailus}3"
+                                additionalAttributes="{spamProtectEmailAddresses: 'ascii'}"
+                            >{data.mailus}</f:link.email>
                     </div>
                 </div>
             </div>
