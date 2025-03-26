@@ -592,6 +592,9 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  p {
+    margin-bottom: .8em !important;
+  }
 }
 
 .container {
@@ -2548,30 +2551,25 @@ body {
 
 @media (max-width: 1920px) {
   #mybr-5 p br,#mybr-5 br {
-    display: none;
   }
 }
 
 @media (max-width: 1336px) {
   #first-text p br {
-    display: none;
   }
 }
 
 @media (max-width: 1850px) {
   #second-text p br {
-    display: none;
   }
 }
 
 @media (max-width: 1770px) {
   #myid-8 p br {
-    display: none;
   }
 }
 
 #myid-9 p br {
-  display: none;
 }
 
 @media screen and (max-width: 768px) {
