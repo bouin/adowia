@@ -130,10 +130,6 @@ page {
             data = DB:tx_news_domain_model_news:{GP:tx_news_pi1|news}:header
             attribute = property
         }
-        og:site_name {
-            attribute = property
-            data = TSFE:tmpl|setup|sitetitle
-        }
         og:description = {$page.meta.description}
         og:description {
             attribute = property
