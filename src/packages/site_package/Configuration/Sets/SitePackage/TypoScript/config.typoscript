@@ -5,6 +5,8 @@
 config.contentObjectExceptionHandler = 0
 
 config {
+    spamProtectEmailAddresses = 2
+    spamProtectEmailAddresses_atSubst = (at)
     sys_language_mode = content_fallback
     absRefPrefix = auto
     no_cache = 1
