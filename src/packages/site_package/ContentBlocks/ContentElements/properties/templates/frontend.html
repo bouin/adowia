@@ -64,20 +64,16 @@
             </div>
             
             <div class="col-span-12 md:col-span-7 lg:col-span-6 xl:col-span-6 pt-5">
-                <f:if condition="{f:cObject(typoscriptObjectPath: 'lib.comingsoonnews')}">
+                <f:if condition="{data.comingsoonnews}">
                     <f:then>
                         <div class="p-3 md:p-0">
                             <hr class=" border-t border-black pb-1 md:pb-2">
                         </div>
                         <p class="text-center !text-[17px] leading-[1.2em]">{data.titel}</p>
                     </f:then>
-
                 </f:if>
 
-
-
                 <f:cObject typoscriptObjectPath="lib.comingsoonnews"></f:cObject>
-
 
             </div>
                 <div class="col-span-12 md:col-span-1 lg:col-span-2 xl:col-span-3">

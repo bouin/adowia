@@ -26,3 +26,6 @@ fields:
     enableRichtext: true
     label: 'Main text for the properties'
     required: false
+  - identifier: comingsoonnews
+    type: Checkbox
+    label: 'Enable coming soon properties'
