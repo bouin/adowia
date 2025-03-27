@@ -218,21 +218,33 @@ plugin.tx_seo.config {
             news {
                 provider = TYPO3\CMS\Seo\XmlSitemap\RecordsXmlSitemapDataProvider
                 config {
+                    # The database table for news records
                     table = tx_news_domain_model_news
-                    # exclude internal & external news
-                    additionalWhere = {#type} NOT IN(1,2)
+                    
+                    # How to sort the news entries
                     sortField = sorting
+                    
+                    # Which field contains the last modification date
                     lastModifiedField = tstamp
+                    
+                    # Fields for SEO frequency and priority
                     changeFreqField = sitemap_changefreq
                     priorityField = sitemap_priority
-                    pid = 4
-                    recursive = 2
+                    
+                    # Where to find news records: 
+                    pid = 4        # <- PUT YOUR NEWS STORAGE FOLDER UID HERE
+                    recursive = 2  # How many subpages deep to look
+                    
                     url {
-                        pageId = 5
+                        # The UID of your news detail page
+                        pageId = 5  # <- PUT YOUR NEWS DETAIL PAGE UID HERE
+                        
+                        # Maps the news UID to the URL parameter
                         fieldToParameterMap {
                             uid = tx_news_pi1[news]
                         }
 
+                        # Additional parameters needed for news detail view
                         additionalGetParameters {
                             tx_news_pi1.controller = News
                             tx_news_pi1.action = detail
