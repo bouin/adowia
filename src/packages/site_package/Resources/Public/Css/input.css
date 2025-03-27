@@ -299,3 +299,6 @@
     
   }
 }
+.property-name p{
+    margin-bottom: 0px !important;
+}
