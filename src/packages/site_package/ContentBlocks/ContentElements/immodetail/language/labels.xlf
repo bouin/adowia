@@ -4,7 +4,7 @@
 		<header/>
 		<body>
 			<trans-unit id="title">
-				<source>Real estate detail</source>
+				<source>Immobilien Detail</source>
 			</trans-unit>
 			<trans-unit id="description">
 				<source>Used to show more information about real estate property.</source>

@@ -10,7 +10,7 @@ basics:
 fields:
   - identifier: header
     useExistingField: true
-    label: 'Nur zu Orientierung (es wird nicht angezeigt)'
+    label: 'Nur zur Orientierung (es wird nicht angezeigt)'
   - identifier: nameoftheproperty
     type: Textarea
     enableRichtext: true
