@@ -2624,6 +2624,10 @@ body {
   margin-bottom: 0px !important;
 }
 
+.longerdetails p{
+  margin-bottom: 0px !important;
+}
+
 .group.active .group-\[\.active\]\:-translate-y-\[3px\] {
   --tw-translate-y: -3px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
